@@ -8,6 +8,7 @@
 google.setOnLoadCallback(drawChart);
 function drawChart()
 {
+	//read data from spreadsheet
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1lyrUOE9yQQR0rQbW8ydaaKk0f33dyuyESvmh0POF7yQ/edit?usp=sharing');
 	query.setQuery('select B,count(A) group by B ');
     query.send(handleQueryResponse);
@@ -20,7 +21,7 @@ function handleQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  //var chart2 = new google.visualization.MotionChart(document.getElementById('chart_div'));
+  
    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
   chart.draw(data, {width: 600, height:300});

@@ -9,6 +9,7 @@
 google.setOnLoadCallback(drawChart);
 function drawChart()
 {
+	//read data from spreadsheet
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/17NzJ_zrFz9hvVM0FDH2tdzVSKr_7yjR8EWZ4-v_jts8/edit?usp=sharing');
 	query.setQuery('select A,B ');
     query.send(handleQueryResponse);
@@ -21,7 +22,7 @@ function handleQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  //var chart2 = new google.visualization.MotionChart(document.getElementById('chart_div'));
+  
    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
   chart.draw(data, {width: 600, height:300});

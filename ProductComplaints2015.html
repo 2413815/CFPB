@@ -3,12 +3,13 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
- //google.charts.load('current', {'packages':['corechart']});
+ 
  google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawStuff);
 
 function drawStuff() 
 {
+    //read data from spreadsheet
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/14IM4zHpNks2yEQHBH62IJdUh8G9gCflAmFSPewbrZ_E/edit?usp=sharing');
 	                                            
 	//query.setQuery('select A,B, C ');
@@ -22,8 +23,7 @@ function handleQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  //var chart2 = new google.visualization.MotionChart(document.getElementById('chart_div'));
-//   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  
   
    var options = {
           width: 900,
@@ -44,7 +44,7 @@ function handleQueryResponse(response) {
 		  
 		  };
           
- //var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+ //chart
  var chart = new google.charts.Bar(document.getElementById('dual_y_div'));
 
   chart.draw(data, options);

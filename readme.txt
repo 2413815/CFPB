@@ -5,7 +5,7 @@ All HTML files, word document and readme file posted on :
 
 https://github.com/2413815/CFPB
 
-You may download the zip file and unzip the files to access all files.
+You may click on download zip on githup to download files and unzip them to access all files.
 
 
 Application ID:2413815

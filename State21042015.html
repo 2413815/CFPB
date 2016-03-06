@@ -13,6 +13,7 @@ google.charts.setOnLoadCallback(drawTable);
  function drawTable() 
 
 {
+//read data from spreadsheet
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1-4cU2ddldiZs4kW3Wlbdt92ugqdt-EhK6gliDD1wh58/edit?usp=sharing');
 	                                            
 	query.setQuery('select A,B, C,B-C ');
@@ -26,13 +27,7 @@ function handleQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  //var chart2 = new google.visualization.MotionChart(document.getElementById('chart_div'));
-//   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   
-   
-		 
-          
- //var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
  var table = new google.visualization.Table(document.getElementById('table_div'));
 
         table.draw(data, {showRowNumber: true});
